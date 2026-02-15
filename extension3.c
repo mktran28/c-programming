@@ -24,8 +24,7 @@ typedef struct Account {
 
 int main(int arg, char *argv[]) {
     Account newAccount = {"", 0};
-    unsigned char *ptr = (unsigned char *) newAccount.name;
-    printf("Please input your name for a new bank account: ");
+    printf("Please input your name for a new bank account (max. 9 characters): ");
     
     /**
      * The following line reads input from the terminal.
@@ -34,14 +33,9 @@ int main(int arg, char *argv[]) {
      * include the newline character at the end of the line. The [^\n] tells the
      * program to only read as much until a newline character is encountered. 
      */
-    // A bad string has 13-15 characters
-    scanf("%[^\n]s", newAccount.name);
-    printf("Thank you %s, your new account has been initialized with balance %d.\n",
+    scanf("%9[^\n]s", newAccount.name);
+    printf("Thank you %s, your new account has been initialized with balance %d.",
            newAccount.name, newAccount.balance);
-
-    for (int i = 0; i < 16; i++) {
-        printf("%d: %02X\n", i, ptr[i]);
-    }
 					 
     return 0;
 }
