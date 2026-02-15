@@ -1,10 +1,3 @@
-/**
- * This program is for C practice
- * 
- * Mai Khanh Tran
- * 02/14/2026
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
